@@ -1,10 +1,95 @@
 <!DOCTYPE html>
-<html>
-  <body>
-    <p>
-      merhaba ben Aydın Gürkan 
-    </p>
-    <a href="hafta 2.html">hafta2</a>
-    <a href="hafta 3.html">hafta3</a>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Navigation</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #555;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .link-to-weeks {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .link-to-weeks:hover {
+            color: #2980b9;
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            max-width: 600px;
+            margin-top: 20px;
+        }
+        .week-button {
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #3498db;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .week-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aydın GÜRKAN</h1>
+    <h2><a href="#buttonContainer" class="link-to-weeks">Haftalara devam etmek için tıkla</a></h2>
+    <div class="button-container" id="buttonContainer">
+        
+    </div>
+
+    <script>
+        
+        const totalWeeks = 10; 
+
+        
+        const buttonContainer = document.getElementById('buttonContainer');
+
+        
+        for (let i = 1; i <= totalWeeks; i++) {
+            const button = document.createElement('button');
+            button.className = 'week-button';
+            button.textContent = `${i}. Hafta`;
+            button.onclick = function() {
+                window.location.href = `week${i}.html`; 
+            };
+            buttonContainer.appendChild(button);
+        }
+    </script>
+       <ul>
+        <li><a href="hafta 2.html">Hafta 2</a></li>
+        <li><a href="hafta 3.html">Hafta 3</a></li>
+        <li><a href="hafta 4.html">Hafta 4</a></li>
+        <li><a href="hafta 5.html">Hafta 5</a></li>
+        <li><a href="hafta 6.html">Hafta 6</a></li>
+    </ul>
+</body>
 </html>
