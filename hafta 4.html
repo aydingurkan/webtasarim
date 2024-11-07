@@ -3,39 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Üyelik Formu</title>
+    <title>Kullanıcı İşlemleri</title>
+    <style>
+        body {
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #d0f0f5;
+            margin: 0;
+        }
+        .form-alani {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: none;
+            width: 300px;
+        }
+        .form-alani.aktif {
+            display: block;
+        }
+        .buton-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .form-buton {
+            padding: 8px 12px;
+            cursor: pointer;
+            background-color: #00574b;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+        }
+        h2 {
+            text-align: center;
+            color: #00574b;
+        }
+        .submit-buton {
+            background-color: #00574b;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .submit-buton:hover {
+            background-color: #004b3d;
+        }
+    </style>
 </head>
 <body>
-    <h1>Üyelik İşlemleri</h1>
-    <form action="/submit_membership" method="post">
-        <label for="firstName">Ad:</label>
-        <input type="text" id="firstName" name="firstName" required><br><br>
 
-        <label for="lastName">Soyad:</label>
-        <input type="text" id="lastName" name="lastName" required><br><br>
+    <div id="uyeForm" class="form-alani aktif">
+        <h2>Yeni Üyelik</h2>
+        <label>İsim Soyisim:</label><br>
+        <input type="text" name="isim" required><br><br>
 
-        <label for="email">E-posta:</label>
-        <input type="email" id="email" name="email" required><br><br>
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
 
-        <label for="password">Şifre:</label>
-        <input type="password" id="password" name="password" required><br><br>
+        <label>Şifre:</label><br>
+        <input type="password" name="sifre" required><br><br>
 
-        <label for="gender">Cinsiyet:</label><br>
-        <input type="radio" id="male" name="gender" value="Erkek">
-        <label for="male">Erkek</label><br>
-        <input type="radio" id="female" name="gender" value="Kadın">
-        <label for="female">Kadın</label><br><br>
+        <label>Doğum Tarihi:</label><br>
+        <input type="date" name="dogumTarihi" required><br><br>
 
-        <label for="birthDate">Doğum Tarihi:</label>
-        <input type="date" id="birthDate" name="birthDate"><br><br>
+        <label>Cinsiyet:</label><br>
+        <input type="radio" id="erkek" name="cinsiyet" value="Erkek">
+        <label for="erkek">Erkek</label>
+        <input type="radio" id="kadin" name="cinsiyet" value="Kadın">
+        <label for="kadin">Kadın</label>
+        <br><br>
 
-        <label for="phone">Telefon:</label>
-        <input type="tel" id="phone" name="phone"><br><br>
+        <label>Şehir:</label><br>
+        <select name="sehir">
+            <option value="malatya">Malatya</option>
+            <option value="istanbul">İstanbul</option>
+            <option value="sivas">Sivas</option>
+        </select><br><br>
 
-        <label for="address">Adres:</label>
-        <textarea id="address" name="address" rows="4" cols="50"></textarea><br><br>
+        <label>Hobileriniz:</label><br>
+        <input type="checkbox" id="basketbol" name="hobi" value="basketbol">
+        <label for="kodYazmak">Basketbol Oynamak</label><br>
+        <input type="checkbox" id="gezi" name="hobi" value="Gezi">
+        <label for="resimCizme">Seyahat Etme</label><br>
+        <input type="checkbox" id="kart" name="hobi" value="Kart">
+        <label for="oyunOynamak">Kart Oyunları</label><br><br>
 
-        <button type="submit">Üye Ol</button>
-    </form>
+        <input type="submit" class="submit-buton" value="Kaydı Tamamla">
+
+        <div class="buton-container">
+            <button class="form-buton" onclick="formDegistir('girisForm')">Kullanıcı Girişi</button>
+            <button class="form-buton" onclick="formDegistir('sifreYardimiForm')">Şifre Yardımı</button>
+        </div>
+    </div>
+
+    <div id="girisForm" class="form-alani">
+        <h2>Kullanıcı Girişi</h2>
+        <label>Email:</label><br>
+        <input type="email" name="emailGiris" required><br><br>
+
+        <label>Şifre:</label><br>
+        <input type="password" name="sifreGiris" required><br><br>
+
+        <input type="submit" class="submit-buton" value="Giriş Yap">
+
+        <div class="buton-container">
+            <button class="form-buton" onclick="formDegistir('uyeForm')">Yeni Üyelik</button>
+            <button class="form-buton" onclick="formDegistir('sifreYardimiForm')">Şifre Yardımı</button>
+        </div>
+    </div>
+
+    <div id="sifreYardimiForm" class="form-alani">
+        <h2>Şifre Yardımı</h2>
+        <label>Email:</label><br>
+        <input type="email" name="sifreYardimi" required><br><br>
+
+        <input type="submit" class="submit-buton" value="Yenile">
+
+        <div class="buton-container">
+            <button class="form-buton" onclick="formDegistir('uyeForm')">Yeni Üyelik</button>
+            <button class="form-buton" onclick="formDegistir('girisForm')">Kullanıcı Girişi</button>
+        </div>
+    </div>
+
+    <script>
+        function formDegistir(formId) {
+            document.querySelectorAll('.form-alani').forEach(form => form.classList.remove('aktif'));
+            document.getElementById(formId).classList.add('aktif');
+        }
+    </script>
 </body>
 </html>
