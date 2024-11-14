@@ -4,60 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab Görevi 2</title>
+    <style>
+      
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        .container {
+            display: grid;
+            gap: 10px;
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .card {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            border-radius: 8px;
+        }
+
+        
+        @media (max-width: 576px) {
+            .container {
+                grid-template-columns: 1fr; 
+            }
+        }
+
+        @media (min-width: 577px) and (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr; 
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 992px) {
+            .container {
+                grid-template-columns: 1fr 1fr 1fr; 
+            }
+        }
+
+        @media (min-width: 993px) {
+            .container {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        Kart 1
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        Kart 2
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        Kart 3
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        Kart 4
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        Kart 5
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        Kart 6
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="container">
+        <div class="card">Kart 1</div>
+        <div class="card">Kart 2</div>
+        <div class="card">Kart 3</div>
+        <div class="card">Kart 4</div>
+        <div class="card">Kart 5</div>
+        <div class="card">Kart 6</div>
     </div>
-
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
