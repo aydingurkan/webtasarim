@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Görevi 2</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: grid;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .card {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            font-size: 1.2em;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        /* Grid settings for responsiveness */
+        @media (max-width: 576px) {
+            .container {
+                grid-template-columns: 1fr; /* Xs: 1 card per row */
+            }
+        }
+
+        @media (min-width: 577px) and (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr; /* Sm: 2 cards per row */
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 992px) {
+            .container {
+                grid-template-columns: 1fr 1fr 1fr; /* Md: 3 cards per row */
+            }
+        }
+
+        @media (min-width: 993px) {
+            .container {
+                grid-template-columns: repeat(6, 1fr); /* Lg: 6 cards per row */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">Kart 1</div>
+        <div class="card">Kart 2</div>
+        <div class="card">Kart 3</div>
+        <div class="card">Kart 4</div>
+        <div class="card">Kart 5</div>
+        <div class="card">Kart 6</div>
+    </div>
+</body>
+</html>
