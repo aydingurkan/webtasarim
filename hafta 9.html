@@ -1,58 +1,48 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kedi ve Köpek Görselleri</title>
+    <title>Kedi ve Köpek</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-            margin: 0;
+            text-align: center;
+            margin-top: 50px;
         }
-        .buttons {
-            display: flex;
-            gap: 10px;
+        img {
+            max-width: 300px;
+            height: auto;
             margin-bottom: 20px;
         }
-        .buttons button {
+        button {
+            margin: 10px;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
         }
-        #image-container img {
-            max-width: 300px;
-            height: auto;
-            display: none;
-        }
     </style>
 </head>
 <body>
-
-    <div class="buttons">
-        <button onclick="showImage('kedi')">Kedi</button>
-        <button onclick="showImage('kopek')">Köpek</button>
-    </div>
-
-    <div id="image-container">
-        <img src="images/kedi.jpg" alt="Kedi Fotoğrafı">
-        <img src="images/kopek.jpg" alt="Köpek Fotoğrafı">
+    <h1>Selam!</h1>
+    <img id="animalImage" src="img/selam.jpg" alt="Selam Fotoğrafı">
+    <div>
+        <button onclick="showkedi()">Kedi</button>
+        <button onclick="showkopek()">Köpek</button>
     </div>
 
     <script>
-        function showImage(animal) {
-            
-            document.getElementById("kedi").style.display = "none";
-            document.getElementById("kopek").style.display = "none";
+        function showkedi() {
+            const image = document.getElementById("animalImage");
+            image.src = "images/kedi.jpg"; 
+            image.alt = "Kedi Fotoğrafı";
+        }
 
-          
-            document.getElementById(animal).style.display = "block";
+        function showkopek() {
+            const image = document.getElementById("animalImage");
+            image.src = "images/kopek.jpg"; 
+            image.alt = "Köpek Fotoğrafı";
         }
     </script>
-
 </body>
 </html>
