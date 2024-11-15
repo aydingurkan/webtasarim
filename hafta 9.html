@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kedi ve Köpek Görselleri</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #image-container img {
+            max-width: 300px;
+            height: auto;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="buttons">
+        <button onclick="showImage('kedi')">Kedi</button>
+        <button onclick="showImage('kopek')">Köpek</button>
+    </div>
+
+    <div id="image-container">
+        <img id="kedi" src="kedi.jpg" alt="Kedi Fotoğrafı">
+        <img id="kopek" src="kopek.jpg" alt="Köpek Fotoğrafı">
+    </div>
+
+    <script>
+        function showImage(animal) {
+            // Hide both images first
+            document.getElementById("kedi").style.display = "none";
+            document.getElementById("kopek").style.display = "none";
+
+            // Show the selected image
+            document.getElementById(animal).style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
