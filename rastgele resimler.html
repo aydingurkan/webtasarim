@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinamik Web Sayfası</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            transition: background-color 0.5s ease-in-out;
+            background-color: #87CEEB; /* Modern bir gökyüzü tonu */
+        }
+        h1 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .image-container img {
+            width: 220px;
+            height: 150px;
+            border-radius: 12px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .image-container img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+        .hidden {
+            display: none;
+        }
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Dinamik Web Sayfası</h1>
+
+<div class="image-container">
+    <img id="image1" src="https://via.placeholder.com/200" class="hidden" alt="Doğa Resmi 1">
+    <img id="image2" src="https://via.placeholder.com/200" class="hidden" alt="Doğa Resmi 2">
+    <img id="image3" src="https://via.placeholder.com/200" class="hidden" alt="Doğa Resmi 3">
+</div>
+
+<div class="buttons-container">
+    <button onclick="toggleImage('image1')">Resim 1 Göster/Gizle</button>
+    <button onclick="toggleImage('image2')">Resim 2 Göster/Gizle</button>
+    <button onclick="toggleImage('image3')">Resim 3 Göster/Gizle</button>
+</div>
+
+<script>
+    const backgroundColors = ['#87CEEB', '#FFD700', '#FF4500', '#32CD32', '#1E90FF', '#FF6347', '#ADFF2F', '#8A2BE2', '#FF1493', '#48D1CC'];
+
+    const images = [
+        'https://picsum.photos/id/1015/300/200', // Doğa resmi
+        'https://picsum.photos/id/1016/300/200',
+        'https://picsum.photos/id/1018/300/200',
+        'https://picsum.photos/id/1021/300/200',
+        'https://picsum.photos/id/1025/300/200',
+        'https://picsum.photos/id/1035/300/200',
+        'https://picsum.photos/id/1043/300/200',
+        'https://picsum.photos/id/1049/300/200',
+        'https://picsum.photos/id/1056/300/200',
+        'https://picsum.photos/id/1063/300/200'
+    ];
+
+    window.onload = function() {
+        changeBackground();
+        showRandomImage();
+    };
+
+    function changeBackground() {
+        const randomColor = backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
+        document.body.style.backgroundColor = randomColor;
+    }
+
+    function showRandomImage() {
+        const randomIndexes = Array.from({ length: 3 }, () => Math.floor(Math.random() * images.length));
+        document.getElementById('image1').src = images[randomIndexes[0]];
+        document.getElementById('image2').src = images[randomIndexes[1]];
+        document.getElementById('image3').src = images[randomIndexes[2]];
+        document.getElementById('image1').classList.remove('hidden');
+        document.getElementById('image2').classList.remove('hidden');
+        document.getElementById('image3').classList.remove('hidden');
+    }
+
+    function toggleImage(imageId) {
+        const image = document.getElementById(imageId);
+        if (image.classList.contains('hidden')) {
+            image.classList.remove('hidden');
+        } else {
+            image.classList.add('hidden');
+        }
+    }
+</script>
+
+</body>
+</html>
