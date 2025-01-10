@@ -19,20 +19,10 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
             border-radius: 10px;
         }
-
-        h1 {
-            text-align: center;
-            font-size: 24px;
-            color: #ffffff;
-            margin-bottom: 20px;
-        }
     </style>
 </head>
 <body>
-    <div>
-        <h1>10x10 Daireler</h1>
-        <canvas id="canvas" width="500" height="500"></canvas>
-    </div>
+    <canvas id="canvas" width="500" height="500"></canvas>
     <script>
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
@@ -51,19 +41,11 @@
                 const x = i * circleSize * 2 + circleSize;
                 const y = j * circleSize * 2 + circleSize;
 
-              
-                const isFilled = Math.random() > 0.5; 
+               
                 ctx.beginPath();
                 ctx.arc(x, y, circleSize - 5, 0, Math.PI * 2);
                 ctx.fillStyle = colors[(i + j) % colors.length];
-                ctx.strokeStyle = colors[(i + j) % colors.length];
-
-                if (isFilled) {
-                    ctx.fill();
-                } else {
-                    ctx.lineWidth = 2;
-                    ctx.stroke();
-                }
+                ctx.fill();
                 ctx.closePath();
             }
         }
