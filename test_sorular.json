@@ -1,0 +1,114 @@
+{
+    "htmlQuestions": [
+      {
+        "id": 1,
+        "question": "CSS nedir?",
+        "options": [
+          "A: Cascading Style Sheets",
+          "B: Creative Style System",
+          "C: Colorful Style Sheets",
+          "D: Computer Style System"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": 2,
+        "question": "CSS hangi dosya uzantısında saklanır?",
+        "options": [
+          "A: .html",
+          "B: .css",
+          "C: .style",
+          "D: .scss"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": 3,
+        "question": "CSS'de yazı tipi boyutunu ayarlamak için hangi özellik kullanılır?",
+        "options": [
+          "A: font-family",
+          "B: font-size",
+          "C: text-size",
+          "D: text-style"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": 4,
+        "question": "Bir HTML öğesinin arka plan rengi hangi CSS özelliğiyle belirlenir?",
+        "options": [
+          "A: color",
+          "B: background-color",
+          "C: bg-color",
+          "D: background"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": 5,
+        "question": "CSS'de bir öğeyi ortalamak için hangi özellik kullanılır?",
+        "options": [
+          "A: text-align",
+          "B: margin-center",
+          "C: align-items",
+          "D: justify-content"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": 6,
+        "question": "CSS'de bir öğenin dış boşluğunu ayarlamak için hangi özellik kullanılır?",
+        "options": [
+          "A: padding",
+          "B: margin",
+          "C: border",
+          "D: spacing"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": 7,
+        "question": "CSS'de bir öğenin kenarlığını ayarlamak için hangi özellik kullanılır?",
+        "options": [
+          "A: border",
+          "B: outline",
+          "C: edge",
+          "D: box"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": 8,
+        "question": "CSS'de bir öğeye gölge eklemek için hangi özellik kullanılır?",
+        "options": [
+          "A: shadow",
+          "B: box-shadow",
+          "C: text-shadow",
+          "D: outline-shadow"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": 9,
+        "question": "CSS'de bir sınıf seçicisi nasıl tanımlanır?",
+        "options": [
+          "A: .sınıfAdı",
+          "B: #sınıfAdı",
+          "C: <sınıfAdı>",
+          "D: sınıfAdı"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": 10,
+        "question": "CSS'de iç içe geçmiş bir öğeye stil vermek için hangi seçici kullanılır?",
+        "options": [
+          "A: >",
+          "B: +",
+          "C: ~",
+          "D: boşluk ( )"
+        ],
+        "answer": "D"
+      }
+    ]
+}
