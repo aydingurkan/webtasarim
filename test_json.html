@@ -13,13 +13,13 @@
             box-sizing: border-box;
             min-height: 100vh;
             background-color: #000;
-            color: #ff0;
+            color: #0f0;
         }
 
         h1 {
             text-align: center;
             margin-top: 20px;
-            color: #ff0;
+            color: #0f0;
         }
 
         .container {
@@ -32,19 +32,19 @@
             padding: 15px;
             margin: 15px 0;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(255, 255, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 255, 0, 0.3);
         }
 
         .question h2 {
             margin-bottom: 10px;
-            color: #ff0;
+            color: #0f0;
         }
 
         button {
             padding: 10px 20px;
             font-size: 16px;
-            background-color: #ff0;
-            color: #000;
+            background-color: #f00;
+            color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -52,7 +52,7 @@
         }
 
         button:hover {
-            background-color: #ffd700;
+            background-color: #ff4500;
         }
 
         #popup {
@@ -63,7 +63,7 @@
             padding: 20px;
             background: #222;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(255, 255, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 255, 0, 0.3);
             text-align: center;
             display: none;
             z-index: 1000;
@@ -71,12 +71,12 @@
 
         #popup h2 {
             font-size: 24px;
-            color: #ff0;
+            color: #0f0;
         }
 
         #popup p {
             font-size: 18px;
-            color: #ff0;
+            color: #0f0;
         }
 
         #overlay {
@@ -92,15 +92,15 @@
 
         #close-popup {
             padding: 10px 20px;
-            background-color: #ff0;
-            color: #000;
+            background-color: #f00;
+            color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
 
         #close-popup:hover {
-            background-color: #ffd700;
+            background-color: #ff4500;
         }
     </style>
 </head>
@@ -122,9 +122,8 @@
 
     <script>
         document.getElementById('start-test').addEventListener('click', function () {
-        }          ,
-          fetch('https://raw.githubusercontent.com/aydingurkan/webtasarim/main/test_sorular.json')
-        .then(response => response.json())
+            fetch('https://raw.githubusercontent.com/aydingurkan/webtasarim/main/test_sorular.json')
+                .then(response => response.json())
                 .then(data => {
                     const questionsContainer = document.getElementById('questions-container');
                     questionsContainer.innerHTML = '';
@@ -173,8 +172,8 @@
                         document.getElementById('overlay').style.display = 'block';
                     });
                 })
-                .catch(error => console.error('Error:', error)));
-        ;
+                .catch(error => console.error('Error:', error));
+        });
 
         document.getElementById('close-popup').addEventListener('click', function () {
             document.getElementById('popup').style.display = 'none';
